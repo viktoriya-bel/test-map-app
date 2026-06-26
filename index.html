@@ -73,8 +73,9 @@
 						alert('Ваши координаты:' + lat + lon);
 
 						mapApp.setCenter([lat, lon]);
+						mapApp.setZoom(16);
 
-						new ymaps.Placemark(coords, {
+						ymaps.Placemark(coords, {
 							balloonContent: 'Вы здесь',
 						});
 					},
