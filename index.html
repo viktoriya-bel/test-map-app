@@ -33,6 +33,8 @@
 				{ id: 1, lat: 46.372461, lon: 48.082918, title: 'АЗС Лукойл' },
 				{ id: 2, lat: 46.361547, lon: 48.055771, title: 'АЗС Лукойл' },
 				{ id: 3, lat: 46.359911, lon: 48.063542, title: 'АЗС Газпром' },
+				{ id: 4, lat: 46.337891, lon: 48.041364, title: 'АЗС Газпром' },
+				{ id: 5, lat: 46.339500, lon: 48.021691, title: 'АЗС Газпром' },
 			];
 
 			// Конвертируем массив в FeatureCollection для ObjectManager
@@ -62,13 +64,13 @@
 		}
 
 		ymaps.ready(() => {
-			alert('111');
 			if ('geolocation' in navigator) {
 				navigator.geolocation.getCurrentPosition(
 					(position) => {
 						const lat = position.coords.latitude;
 						const lon = position.coords.longitude;
 						console.log('Ваши координаты:', lat, lon);
+						alert('Ваши координаты:' + lat + lon);
 
 						const map = new ymaps.Map('map', {
 							center: [lat, lon],
@@ -80,6 +82,7 @@
 					},
 					(error) => {
 						console.log('Ошибка геолокации:', error);
+						alert('Ошибка геолокации:');
 					},
 					{
 						enableHighAccuracy: true,
@@ -89,6 +92,7 @@
 				);
 			} else {
 				console.log('Геолокация не поддерживается браузером');
+				alert('Геолокация не поддерживается браузером');
 			}
 
 
