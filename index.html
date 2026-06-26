@@ -73,15 +73,15 @@
 						alert('Ваши координаты:' + lat + lon);
 
 						mapApp.setCenter([lat, lon]);
-						mapApp.setZoom(16);
+						mapApp.setZoom(20);
 
-						ymaps.Placemark(coords, {
+						new ymaps.Placemark([lat, lon], {
 							balloonContent: 'Вы здесь',
 						});
 					},
 					(error) => {
 						console.log('Ошибка геолокации:', error);
-						alert('Ошибка геолокации:' + error);
+						alert('Ошибка получения геолокации');
 					},
 					{
 						enableHighAccuracy: true,
