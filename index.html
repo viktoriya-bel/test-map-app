@@ -20,11 +20,11 @@
 
 	<script src="https://api-maps.yandex.ru/2.1/?apikey=ВАШ_API_КЛЮЧ&lang=ru_RU" type="text/javascript"></script>
 	<script>
-
+		let mapApp;
 		ymaps.ready(init);
 
 		function init() {
-			const map = new ymaps.Map('map', {
+			mapApp = new ymaps.Map('map', {
 				center: [46.347614, 48.030178],
 				zoom: 14,
 			});
@@ -59,7 +59,7 @@
 				gridSize: 64,
 			});
 
-			map.geoObjects.add(objectManager);
+			mapApp.geoObjects.add(objectManager);
 			objectManager.add(features);
 		}
 
@@ -72,10 +72,8 @@
 						console.log('Ваши координаты:', lat, lon);
 						alert('Ваши координаты:' + lat + lon);
 
-						const map = new ymaps.Map('map', {
-							center: [lat, lon],
-							zoom: 14,
-						});
+						mapApp.setCenter([lat, lon]);
+
 						new ymaps.Placemark(coords, {
 							balloonContent: 'Вы здесь',
 						});
