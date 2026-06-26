@@ -70,15 +70,13 @@
 						const lat = position.coords.latitude;
 						const lon = position.coords.longitude;
 						console.log('Ваши координаты:', lat, lon);
-						alert('Ваши координаты:' + lat + lon);
+						// alert('Ваши координаты:' + lat + lon);
 
 						mapApp.setCenter([lat, lon]);
 						mapApp.setZoom(18);
 
 						const placemark = new ymaps.Placemark([lat, lon], {
 							balloonContent: 'Вы здесь',
-							balloonContentHeader: 'Моя точка',
-							balloonContentBody: 'Это пример метки',
 						},
 							{
 								preset: 'islands#redDotIcon', // стиль иконки
