@@ -75,15 +75,14 @@
 						mapApp.setCenter([lat, lon]);
 						mapApp.setZoom(18);
 
-						const placemark = new ymaps.Placemark([lat, lon],
-							{
-								balloonContentHeader: 'Моя точка',
-								balloonContentBody: 'Это пример метки',
-							},
+						const placemark = new ymaps.Placemark([lat, lon], {
+							balloonContent: 'Вы здесь',
+							balloonContentHeader: 'Моя точка',
+							balloonContentBody: 'Это пример метки',
+						},
 							{
 								preset: 'islands#redDotIcon', // стиль иконки
-							}
-						);
+							});
 
 						mapApp.geoObjects.add(placemark);
 					},
