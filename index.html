@@ -26,7 +26,7 @@
 		function init() {
 			const map = new ymaps.Map('map', {
 				center: [46.347614, 48.030178],
-				zoom: 13,
+				zoom: 14,
 			});
 
 			const points = [
@@ -62,7 +62,7 @@
 		}
 
 		ymaps.ready(() => {
-			console.log('111');
+			alert('111');
 			if ('geolocation' in navigator) {
 				navigator.geolocation.getCurrentPosition(
 					(position) => {
